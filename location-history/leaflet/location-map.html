@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Map Demo</title>
+    <title>My Location History</title>
     
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <link rel="stylesheet" href="http://geoffboeing.com/share/projects/leaflet/0.7.7/leaflet.css" />
+    <script src='http://geoffboeing.com/share/projects/leaflet/0.7.7/leaflet.js'></script>
     
     <script src='location-dataset.js'></script>
     
@@ -36,15 +36,15 @@
     //add tile layer basemap to the map
     basemapUrl = 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
     basemapAttribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>';
-    basemapProperties = {minZoom: 3, maxZoom: 18, continuousWorld: false, noWrap: true, attribution: basemapAttribution};
+    basemapProperties = {minZoom: 3, maxZoom: 16, continuousWorld: false, noWrap: true, attribution: basemapAttribution};
     var basemap = L.tileLayer(basemapUrl, basemapProperties);
     map.addLayer(basemap);
 
     // specify what the circle markers should look like
     var markerStyles = {
-        radius: 8,
-        fillColor: 'blue', fillOpacity: 0.8,
-        color: '#333333', opacity: 0.8, weight: 1
+        radius: 6,
+        fillColor: '#0033cc', fillOpacity: 0.5,
+        color: '#333333', opacity: 0.7, weight: 1
     };
     
     // specify how to load the individual features 
@@ -63,7 +63,8 @@
     map.addLayer(pointsLayer);
     
     // fit the map window to the data points
-    map.fitBounds(pointsLayer.getBounds());
+    //map.fitBounds(pointsLayer.getBounds());
+    map.setView(new L.LatLng(35, -115), 6);
 
     </script>
 </body>
