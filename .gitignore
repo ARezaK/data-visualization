@@ -46,3 +46,9 @@ daytime-population-density/data
 .Trashes
 ehthumbs.db
 Thumbs.db
+.idea/workspace.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/encodings.xml
+.idea/vcs.xml
+.idea/data-visualization.iml
